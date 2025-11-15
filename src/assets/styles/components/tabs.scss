@@ -1,0 +1,117 @@
+.switch-tabs {
+  height: 48px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  background: var(--background-color);
+  border-radius: 8px;
+  position: relative;
+  border: 2px solid var(--shades-color);
+  width: fit-content;
+  min-width: 200px;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  &.has-2-tabs { --count-tabs: 2; }
+  &.has-3-tabs { --count-tabs: 3; }
+  &.has-4-tabs { --count-tabs: 4; }
+
+  &.input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  &.label {
+    padding: 0 16px;
+    cursor: pointer;
+    text-align: center;
+    height: 100%;
+    display: grid;
+    border-radius: calc(8px - 4px);
+    place-items: center;
+    color: var(--text-color);
+    transition: all 0.25s ease;
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+    min-width: 60px;
+
+    .input:checked + & {
+      color: var(--background-color);
+    }
+
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: calc((100% - 4px) / var(--count-tabs));
+    height: calc(100% - 4px);
+    background: var(--accent-color);
+    border-radius: calc(8px - 4px);
+    transition: transform 0.3s ease;
+    z-index: 1;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+  }
+
+  &.consist-2-tabs {
+    &.switch-tabs--active-0::after { transform: translateX(0%); }
+    &.switch-tabs--active-1::after { transform: translateX(100%); }
+  }
+
+  &.consist-3-tabs {
+    &.switch-tabs--active-0::after { transform: translateX(0%); }
+    &.switch-tabs--active-1::after { transform: translateX(100%); }
+    &.switch-tabs--active-2::after { transform: translateX(200%); }
+  }
+
+  &.consist-4-tabs {
+    &.switch-tabs--active-0::after { transform: translateX(0%); }
+    &.switch-tabs--active-1::after { transform: translateX(100%); }
+    &.switch-tabs--active-2::after { transform: translateX(200%); }
+    &.switch-tabs--active-3::after { transform: translateX(300%); }
+  }
+
+
+  &.is-active-0 {
+    --active-index: 0;
+  }
+
+  &.is-active-1 {
+    --active-index: 1;
+  }
+
+  &.is-active-2 {
+    --active-index: 2;
+  }
+
+  &.is-active-3 {
+    --active-index: 3;
+  }
+
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+

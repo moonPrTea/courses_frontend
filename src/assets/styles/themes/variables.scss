@@ -1,0 +1,28 @@
+// --> цвета для тем, темно-синяя тема находится в разработке
+$themes: (
+  dark-blue: (
+  ),
+
+  light: (
+    background-color: #f4f4f9,
+    second-color: #fdfdff,
+    shades-color: #cccfd5,
+
+    text-color: #2D2D2A,
+    light-text: #fdfdff,
+    second-text-color: #1e1e1d,
+    text-muted: #778087,
+
+    border-color: #bde0fe,
+    border-focus-color: #a2d2ff,
+
+    accent-color: #0d6efd,
+    accent-hover-color: #0b5ed7,
+    accent-active: #0a58ca,
+
+    disabled-color: rgba(0, 73, 208, 0.43),
+
+    circle-color: #0167fd,
+
+  )
+)

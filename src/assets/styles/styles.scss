@@ -1,0 +1,65 @@
+@use 'components/cards';
+@use 'components/buttons';
+@use 'components/inputs';
+@use 'components/tabs';
+@use 'components/panels';
+
+@use './themes/variables' as vrs;
+@use 'themes/theme-mixins' as th-mixin;
+
+
+:root {
+  @include th-mixin.theme(light);
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.text {
+  text-align: justify;
+  margin-bottom: 0.8rem;
+
+  &.is-warning {
+    color: #f14668;
+  }
+
+  &.is-sucess {
+    color: #48c774;;
+  }
+
+  &.is-small {
+    font-size: 0.9rem;
+  }
+}
+
+
+.title {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: #555;
+  padding-top:0.5rem;
+}
+
+.image-field {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+
+  .image-example {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2rem;
+  }
+
+}

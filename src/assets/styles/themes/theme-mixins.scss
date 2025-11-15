@@ -1,0 +1,28 @@
+@use 'variables' as vrs;
+@use "sass:map";
+
+@mixin theme($theme-title) {
+  $theme: map.get(vrs.$themes, $theme-title);
+
+  --background-color: #{map.get($theme, background-color)};
+  --second-color: #{map.get($theme, second-color)};
+  --shades-color: #{map.get($theme, shades-color)};
+  --text-color: #{map.get($theme, text-color)};
+  --second-text-color: #{map.get($theme, second-text-color)};
+  --text-muted: #{map.get($theme, text-muted)};
+  --border-color: #{map.get($theme, border-color)};
+  --border-focus-color: #{map.get($theme, border-focus-color)};
+  --accent-color: #{map.get($theme, accent-color)};
+  --accent-hover-color: #{map.get($theme, accent-hover-color)};
+  --accent-active: #{map.get($theme, accent-active)};
+  --light-text: #{map.get($theme, light-text)};
+  --accent: #{map.get($theme, accent)};
+  --circle-color: #{map.get($theme, circle-color)};
+  --disabled-color: #{map.get($theme, disabled-color)};
+}
+
+
+@function get-current-theme($input-color, $input-theme: light) {
+  $theme: map.get(vrs.$themes, $input-theme);
+  @return map.get($theme, $input-color);
+}
